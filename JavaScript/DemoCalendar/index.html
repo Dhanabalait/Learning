@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+</head>
+
+<body>
+
+    <div id='calendar'></div>
+    <script>
+        $(document).ready(function () {
+            $('#calendar').fullCalendar({
+                header:
+                {
+                    left: 'month, agendaWeek, agendaDay, list',
+                    center: 'title',
+                    right: 'prev, today, next'
+                },
+                footer:
+                {
+                    left: 'month, agendaWeek, agendaDay, list',
+                    center: 'title',
+                    right: 'prev, today, next'
+                },
+                buttonText:
+                {
+                    today: 'Today',
+                    month: 'Month',
+                    week: 'Week',
+                    day: 'Day',
+                    list: 'List'
+                },
+                events: [{
+                    title: 'Mehndi',
+                    start: '2024-02-01T09:00',
+                    end: '2024-02-01T13:00',
+                    color: 'yellow',
+                    textColor: 'black'
+                },
+                {
+                    title: 'Haldi',
+                    start: '2024-02-02T15:00',
+                    end: '2024-02-02T17:00',
+                    color: 'yellow',
+                    textColor: 'black'
+                },
+                {
+                    title: 'Marriage',
+                    start: '2024-02-02T18:00',
+                    end: '2024-02-03T24:00',
+                    color: 'yellow',
+                    textColor: 'black'
+                }],
+                dayRender: function (date, cell) {
+                    var today = $.fullCalendar.moment();
+                    if (date.get('date') == today.get('date')) {
+                        cell.css("background", "yellow");
+                    }
+                },
+                editable: true
+            });
+        });
+    </script>
+</body>
+
+</html>

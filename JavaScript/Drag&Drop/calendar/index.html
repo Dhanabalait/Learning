@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop Calendar - Using Js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="calendar-bg">
+            <div class="calendar-left">
+                <div class="cal-header">
+                    <div class="cal-month" id="calMonth"></div>
+                    <div class="cal-nav">
+                        <button id="btnPrevious"><ion-icon name="arrow-back-outline"></ion-icon></button>
+                        <button id="btnNext"><ion-icon name="arrow-forward-outline"></ion-icon></button>
+                    </div>
+                </div>
+                <div class="cal-weekdays">
+                    <div class="week-day">Sun</div>
+                    <div class="week-day">Mon</div>
+                    <div class="week-day">Tue</div>
+                    <div class="week-day">Wed</div>
+                    <div class="week-day">Thu</div>
+                    <div class="week-day">Fri</div>
+                    <div class="week-day">Sat</div>
+                </div>
+                <div class="cal-days" id="calendarDays">
+                </div>
+            </div>
+            <div class="external-events">
+                <h4>Events</h4>
+                <div class="event-drop-box" id="externalEvents">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-size: 16px;
+color: #ffffff;
+background-color: #2c3e50;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+width: 100vw;
+height: 100vh;
+}
+ul li {
+list-style: none;
+}
+.quick-menu {
+position: relative;
+width: 400px;
+height: 400px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.toggle-btn {
+
+cursor: pointer;
+width: 65px;
+height: 65px;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+border: 2px solid #ffffff;
+font-size: 1.8rem;
+background-color: #2c3e50;
+z-index: 111;
+transition: transform 1.25s;
+}
+.quick-menu.active .toggle-btn {
+transform: rotate(315deg);
+}
+.quick-menu ul {
+    position: absolute;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quick-menu li {
+position: absolute;
+left: 0;
+transform-origin: 200px;
+transform: rotate(0deg) translateX(170px);
+transition: 0.5s;
+}
+
+.quick-menu.active li {
+transform: rotate(calc(360deg / 7 * var(--i))) translateX(0px);
+}
+
+.quick-menu li a {
+width: 60px;
+height: 60px;
+border-radius: 60px;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--clr);
+font-size: 1.5rem;
+border: 2px solid var(--clr);
+transition: 1s;
+}
+
+.quick-menu li a {
+transform: rotate(calc(-360deg / 7 * var(--i)));
+}
+.quick-menu li a:hover{
+    color: #2c3e50;
+    background-color: var(--clr);
+    box-shadow: 0 0 10px var(--clr) , 0 0 30px var(--clr);
+    transition: 0s;
+}

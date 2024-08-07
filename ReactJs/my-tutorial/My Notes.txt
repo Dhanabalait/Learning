@@ -1,0 +1,9 @@
+npm create vite@latest
+npm install
+npm run dev
+npm i react-router-dom
+
+1. Router setup
+import { BrowserRouter,Routes, Route } from 'react-router-dom'
+
+2. Digital clock component	

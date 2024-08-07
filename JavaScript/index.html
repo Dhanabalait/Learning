@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+</head>
+
+<body>
+    <h1>Java Script Methods</h1>
+    <h3>Arrow Functions</h4>
+        <p>Arrow functions were introduced in ES6.</p>
+        <p>Arrow functions allow us to write shorter function syntax:</p>
+        
+        <h4>Before Arrow</h4>
+        <pre>
+const add = function(a, b) {
+    return a + b;
+};
+console.log(add(1, 2)); // 3
+</pre>
+        <br>
+        <h4>With Arrow</h4>
+        <pre>
+const add = (a, b) =>{ return a + b };
+console.log(add(1, 2)); // 3
+</pre>
+
+        <hr>
+
+        <h3>Array</h3>
+        <p>In JavaScript, arrays and objects are both used to store collections of data, but they are used in different ways.</p>
+<pre>
+//Type 1
+let num = [1, 2, 3, 4, 5];
+console.log(numbers[0]); // output: 1
+
+//Type 2
+let num_1 = new Array(1,2,3,4,5);
+console.log(numbers[0]); // output: 1
+</pre>
+        <h4>Array Methods</h4>
+        <ul>
+            <li>Array length</li>
+            <li>Array toString()</li>
+            <li>Array pop()</li>
+            <li>Array push()</li>
+            <li>Array shift()</li>
+            <li>Array unshift()</li>
+            <li>Array join()</li>
+            <li>Array delete()</li>
+            <li>Array concat()</li>
+            <li>Array flat()</li>
+            <li>Array splice()</li>
+            <li>Array slice()</li>
+        </ul>
+<hr>
+
+<h3>Destructuring</h3>
+<pre>
+//Destructuring
+let num_1 = new Array(10,2,30,4,50);
+
+//let [a,b,c] = num_1;
+//let [a,b,,d] = num_1;
+let [a,b,...d] = num_1;
+console.log('A: ', a);
+console.log('B: ', b);
+//console.log('C: ', c);
+console.log('D: ', d);
+</pre>
+
+<hr>
+<h3>Block Scope and Function Scope in JavaScript</h3>
+<p>JavaScript has two types of scope: block scope and function scope. Understanding the difference between the two can help you write better, more maintainable code.
+
+    Block scope refers to variables declared within a block using the let or const keyword. These variables are only accessible within that block and any nested blocks. A block is defined as any section of code enclosed by curly braces {}.</p>
+
+<h3>SetTimeut</h3>
+<pre>
+console.log('setTimeout');
+setTimeout(function(){
+    console.log('setTimeout: Hi...');
+},5000);
+</pre>
+<h3>setInterval</h3>
+<pre>
+console.log('setInterval');
+setInterval(function(){
+    console.log('setInterval: Hi....');
+}, 5000);
+</pre>
+
+<hr>
+
+<h2 class="h3">Mouse events:</h2>
+<table border="1" cellpadding="8" cellspacing="0">
+<tbody>
+<tr>
+<th>Event Performed</th>
+<th>Event Handler</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>click</td>
+<td>onclick</td>
+<td>When mouse click on an element</td>
+</tr>
+<tr>
+<td>mouseover</td>
+<td>onmouseover</td>
+<td>When the cursor of the mouse comes over the element</td>
+</tr>
+<tr>
+<td>mouseout</td>
+<td>onmouseout</td>
+<td>When the cursor of the mouse leaves an element</td>
+</tr>
+<tr>
+<td>mousedown</td>
+<td>onmousedown</td>
+<td>When the mouse button is pressed over the element</td>
+</tr>
+<tr>
+<td>mouseup</td>
+<td>onmouseup</td>
+<td>When the mouse button is released over the element</td>
+</tr>
+<tr>
+<td>mousemove</td>
+<td>onmousemove</td>
+<td>When the mouse movement takes place.</td>
+</tr>
+</tbody>
+</table>
+<h2 class="h3">Keyboard events:</h2>
+<table border="1" cellpadding="8" cellspacing="0">
+<tbody>
+<tr>
+<th>Event Performed</th>
+<th>Event Handler</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Keydown &amp; Keyup</td>
+<td>onkeydown &amp; onkeyup</td>
+<td>When the user press and then release the key</td>
+</tr>
+</tbody>
+</table>
+<h2 class="h3">Form events:</h2>
+<table border="1" cellpadding="8" cellspacing="0">
+<tbody>
+<tr>
+<th>Event Performed</th>
+<th>Event Handler</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>focus</td>
+<td>onfocus</td>
+<td>When the user focuses on an element</td>
+</tr>
+<tr>
+<td>submit</td>
+<td>onsubmit</td>
+<td>When the user submits the form</td>
+</tr>
+<tr>
+<td>blur</td>
+<td>onblur</td>
+<td>When the focus is away from a form element</td>
+</tr>
+<tr>
+<td>change</td>
+<td>onchange</td>
+<td>When the user modifies or changes the value of a form element</td>
+</tr>
+</tbody>
+</table>
+<h2 class="h3">Window/Document events</h2>
+<table border="1" cellpadding="8" cellspacing="0">
+<tbody>
+<tr>
+<th>Event Performed</th>
+<th>Event Handler</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>load</td>
+<td>onload</td>
+<td>When the browser finishes the loading of the page</td>
+</tr>
+<tr>
+<td>unload</td>
+<td>onunload</td>
+<td>When the visitor leaves the current webpage, the browser unloads it</td>
+</tr>
+<tr>
+<td>resize</td>
+<td>onresize</td>
+<td>When the visitor resizes the window of the browser</td>
+</tr>
+</tbody>
+</table>
+        <script src="app.js"></script>
+</body>
+
+</html>

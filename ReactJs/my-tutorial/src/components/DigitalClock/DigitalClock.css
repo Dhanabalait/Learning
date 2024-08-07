@@ -1,0 +1,28 @@
+.clock-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #34495e;
+    flex-direction: column;
+}
+.digital-clock{
+    width: 95%;
+    max-width: 420px;
+    background-color: #ecf0f1;
+    border-radius: 1rem;
+    text-align: center;
+    padding: 1.5rem;
+}
+.digital-clock h3{
+    color: #1abc9c;
+}
+.time {
+    font-size: max(4.2vw, 24px);
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 3px;
+}
+.date{
+    font-size: 18px;
+}

@@ -1,0 +1,12 @@
+-- Express Js install
+cd backend
+npm init
+npm install express 
+rename package.json -> main:server.js
+npm install nodemon
+npx nodemon
+
+
+-- ReactJs install
+npx create-react-app
+npm start

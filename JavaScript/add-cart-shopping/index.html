@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Food Delight</a>
+                <div class="cart-box" id="cart-icon">
+                    <span class="cart-count">0</span>
+                    <ion-icon name="cart-outline"></ion-icon>
+                </div>
+            </nav>
+        </div>
+        <div class="cart-section">
+            <h3 class="d-flex justify-content-between align-items-center">Cart Items
+                <ion-icon name="close-circle-outline" id="cart-close"></ion-icon>
+            </h3>
+            <ul>
+                <li class="cart-item">
+                    <div class="cart-img">
+                        <img src="img/1.jpg" alt="">
+                    </div>
+                    <div class="cart-details">
+                        <h4 class="cart-title">Sweet Corn Chicken Soup</h4>
+                        <table class="table table-borderless">
+                            <tr>
+                                <td>
+                                    <p class="cart-price">
+                                        Rs.109/-
+                                    </p>
+                                </td>
+                                <td align="right">
+                                    <p class="cart-amount fw-bold">
+                                        Rs.109/-
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" value="1" class="cart-quantity form-control">
+                                </td>
+                                <td align="right">
+                                    <ion-icon name="trash-outline" class="cart-remove"></ion-icon>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+                <li class="cart-item">
+                    <div class="cart-img">
+                        <img src="img/2.jpg" alt="">
+                    </div>
+                    <div class="cart-details">
+                        <h4 class="cart-title">Alfredo Pasta</h4>
+                        <table class="table table-borderless">
+                            <tr>
+                                <td>
+                                    <p class="cart-price">
+                                        Rs.185/-
+                                    </p>
+                                </td>
+                                <td align="right">
+                                    <p class="cart-amount fw-bold">
+                                        Rs.185/-
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" value="1" class="cart-quantity form-control">
+                                </td>
+                                <td align="right">
+                                    <ion-icon name="trash-outline" class="cart-remove"></ion-icon>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+            </ul>
+            <div class="px-3">
+                <button type="button" class="btn btn-warning">Place Order</button>
+            </div>
+        </div>
+    </header>
+    <div class="item-section">
+        <div class="container">
+            <ul class="item-list">
+                <li class="item-box">
+                    <div class="item-img">
+                        <img src="img/1.jpg" alt="">
+                    </div>
+                    <h4>Sweet Corn Chicken Soup</h4>
+                    <p class="price">
+                        Rs.109/-
+                    </p>
+                    <button type="button" class="add-to-cart"><ion-icon name="cart-outline"></ion-icon> Add to Cart</button>
+                </li>
+
+                <li class="item-box">
+                    <div class="item-img">
+                        <img src="img/2.jpg" alt="">
+                    </div>
+                    <h4>Alfredo Pasta</h4>
+                    <p class="price">
+                        Rs.185/-
+                    </p>
+                    <button type="button" class="add-to-cart"><ion-icon name="cart-outline"></ion-icon> Add to Cart</button>
+                </li>
+                <li class="item-box">
+                    <div class="item-img">
+                        <img src="img/3.jpg" alt="">
+                    </div>
+                    <h4 class="item-title">Veg Nuggets</h4>
+                    <p class="item-price">
+                        Rs.80/-
+                    </p>
+                    <button type="button" class="add-to-cart"><ion-icon name="cart-outline"></ion-icon> Add to Cart</button>
+                </li>
+                <li class="item-box">
+                    <div class="item-img">
+                        <img src="img/4.jpg" alt="">
+                    </div>
+                    <h4>Vegetable Soup</h4>
+                    <p class="price">
+                        Rs.60/-
+                    </p>
+                    <button type="button" class="add-to-cart"><ion-icon name="cart-outline"></ion-icon> Add to Cart</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+import * as mobiscroll from '@mobiscroll/javascript';
+
+export default {
+  // eslint-disable-next-line es5/no-shorthand-properties
+  init() {
+    mobiscroll.setOptions({
+      // locale,
+      // theme
+    });
+
+    var myEvents = [];
+
+    var myResources = [
+      {
+        id: 1,
+        name: 'Barry',
+        color: '#328e39',
+        img: 'https://img.mobiscroll.com/demos/m1.png',
+      },
+      {
+        id: 2,
+        name: 'Hortense',
+        color: '#00aabb',
+        img: 'https://img.mobiscroll.com/demos/f1.png',
+      },
+      {
+        id: 3,
+        name: 'Carl',
+        color: '#ea72c0',
+        img: 'https://img.mobiscroll.com/demos/m2.png',
+      },
+    ];
+
+    var selectedResources = { 1: true };
+
+    var calendar = mobiscroll.eventcalendar('#demo-header-filter', {
+      view: {
+        agenda: { type: 'month' },
+      },
+      resources: myResources,
+      renderHeader: function () {
+        var header = '<div mbsc-calendar-nav class="mds-header-filter-nav"></div>' + '<div class="mds-header-filter mbsc-flex-1-0">';
+
+        myResources.forEach(function (res) {
+          header +=
+            '<label class="mds-header-filter-' +
+            res.id +
+            '">' +
+            '<img class="mds-header-filter-img" src="' +
+            res.img +
+            '"/>' +
+            '<span class="mds-header-filter-name">' +
+            res.name +
+            '</span>' +
+            '<input type="checkbox" mbsc-segmented name="resource" class="mds-header-filter-input" value="' +
+            res.id +
+            '" ' +
+            (res.id === 1 ? 'checked' : '') +
+            '>' +
+            '</label>';
+        });
+
+        header +=
+          '</div>' +
+          '<button mbsc-calendar-prev></button>' +
+          '<button mbsc-calendar-today></button>' +
+          '<button mbsc-calendar-next></button>';
+        return header;
+      },
+    });
+
+    mobiscroll.getJson(
+      'https://trial.mobiscroll.com/filter-resource-events/',
+      function (events) {
+        myEvents = events;
+        var filteredEvents = myEvents.filter(function (e) {
+          return selectedResources[e.resource];
+        });
+        calendar.setEvents(filteredEvents);
+      },
+      'jsonp',
+    );
+
+    document.querySelectorAll('.mds-header-filter-input').forEach(function (target) {
+      target.addEventListener('change', function () {
+        selectedResources[target.value] = target.checked;
+        var resource = myResources.find(function (r) {
+          return r.id === +target.value;
+        });
+        var filteredEvents = myEvents.filter(function (e) {
+          return selectedResources[e.resource];
+        });
+
+        calendar.setEvents(filteredEvents);
+
+        mobiscroll.toast({
+          message: (target.checked ? 'Showing ' : 'Hiding ') + (resource ? resource.name : '') + ' events',
+        });
+      });
+    });
+  },
+  // eslint-disable-next-line es5/no-template-literals
+  markup: `
+<div id="demo-header-filter"></div>
+  `,
+  // eslint-disable-next-line es5/no-template-literals
+  css: `
+.mds-header-filter-nav {
+  width: 180px;
+}
+
+.mds-header-filter-img {
+  width: 25px;
+}
+
+.mds-header-filter-name {
+  margin-left: 10px;
+}
+
+.mds-header-filter .mbsc-segmented {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.mds-header-filter .mbsc-segmented-button.mbsc-selected {
+  color: #fff;
+}
+
+.mds-header-filter-1 .mbsc-button.mbsc-selected.mbsc-material,
+.mds-header-filter-1 .mbsc-button.mbsc-selected.mbsc-windows,
+.mds-header-filter-1 .mbsc-segmented-selectbox-inner {
+  background: #328e39;
+}
+
+.mds-header-filter-2 .mbsc-button.mbsc-selected.mbsc-material,
+.mds-header-filter-2 .mbsc-button.mbsc-selected.mbsc-windows,
+.mds-header-filter-2 .mbsc-segmented-selectbox-inner {
+  background: #00aabb;
+}
+
+.mds-header-filter-3 .mbsc-button.mbsc-selected.mbsc-material,
+.mds-header-filter-3 .mbsc-button.mbsc-selected.mbsc-windows,
+.mds-header-filter-3 .mbsc-segmented-selectbox-inner {
+  background: #ea72c0;
+}
+  `,
+};

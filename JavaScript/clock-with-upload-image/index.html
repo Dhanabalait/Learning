@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="clock-container">
+
+        <div class="analog-clock clock-shape-circle" id="analog-clock">
+
+            <div class="needle hour"></div>
+            <div class="needle minute"></div>
+            <div class="needle second"></div>
+
+            <div class="clock-number" style="--i:1"><span>1</span></div>
+            <div class="clock-number" style="--i:2"><span>2</span></div>
+            <div class="clock-number" style="--i:3"><span>3</span></div>
+            <div class="clock-number" style="--i:4"><span>4</span></div>
+            <div class="clock-number" style="--i:5"><span>5</span></div>
+            <div class="clock-number" style="--i:6"><span>6</span></div>
+            <div class="clock-number" style="--i:7"><span>7</span></div>
+            <div class="clock-number" style="--i:8"><span>8</span></div>
+            <div class="clock-number" style="--i:9"><span>9</span></div>
+            <div class="clock-number" style="--i:10"><span>10</span></div>
+            <div class="clock-number" style="--i:11"><span>11</span></div>
+            <div class="clock-number" style="--i:12"><span>12</span></div>
+
+            <div class="bg-img-container" id="drag-img-container">
+                <img src="./img/2148985974.jpg" class="bg-img" style="width: 50%; height:50%;" alt="">
+            </div>
+            <button id="drag-button" class="drag-button"></button>
+        </div>
+        
+    </div>
+    <div class="clock-options">
+        <div class="form-group"> 
+            <label for="upload-img" class="select-img-label">Select Image</label>
+            <input type="file" name="upload-img" id="upload-img" class="form-input-file" accept="image/jpeg, image/jpg, image/png">
+        </div>
+        <div class="form-group bg-img-zoom">
+            <label for="zoom"><h4>Zoom</h4></label>
+            
+            <span>-</span><input type="range" name="zoom" id="img-zoom" min="30" max="100" value="50"> <span>+</span>
+        </div>
+        <div class="available-shapes">
+            <h4>Available Shapes</h4>
+            <ul>
+                <li class="shape circle" data-value="circle"></li>
+                <li class="shape square" data-value="square"></li>
+                <li class="shape square-rounded-1" data-value="square-rounded-1"></li>
+                <li class="shape nonagon" data-value="nonagon"></li>
+                <li class="shape bevel" data-value="bevel"></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

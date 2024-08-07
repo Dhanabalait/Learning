@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 18px;
+    text-align: center;
+}
+
+.star {
+    border: none;
+    color: rgb(255, 0, 0);
+    font-size: 32px;
+    background: none;
+    cursor: pointer;
+}
